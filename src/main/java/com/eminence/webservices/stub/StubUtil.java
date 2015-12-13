@@ -12,10 +12,6 @@ class StubUtil {
         return p.matcher(url);
     }
 
-    boolean urlMatches(String url, String urlPattern){
-        return getMatcher(url,urlPattern).find();
-    }
-
     static Map<String,String> getPathVariableValues(String url, String urlPattern, String[] pathVariableNames) {
         Map<String,String> pathVariables = new HashMap<>();
         Matcher matcher = getMatcher(url, urlPattern);
@@ -37,6 +33,10 @@ class StubUtil {
 
         Map<String, String> pathVariableValues = getPathVariableValues(url, urlPattern, pathVariablenNames);
         System.out.println(pathVariableValues);
+    }
+
+    boolean urlMatches(String url, String urlPattern) {
+        return getMatcher(url, urlPattern).find();
     }
 
 }
