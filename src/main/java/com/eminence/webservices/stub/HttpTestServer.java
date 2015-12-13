@@ -36,10 +36,6 @@ public class HttpTestServer {
                 return new TeamCityStub();
             case JIRA:
                 return new JiraStub();
-            case ALM:
-                return new AlmStub();
-            case STASH:
-                return new StashStub();
         }
         return null;
     }
