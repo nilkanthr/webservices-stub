@@ -15,6 +15,8 @@ import org.junit.Test;
 
 import java.net.URI;
 
+import static com.eminence.webservices.ServiceType.*;
+
 
 public class JiraAcceptanceTest {
     private static final String JIRA_URL = "http://localhost:8081";
@@ -24,7 +26,7 @@ public class JiraAcceptanceTest {
 
     @BeforeClass
     public static void getJiraRestClient() throws Exception {
-        HttpTestServer server = new HttpTestServer(ServiceType.JIRA, 8081);
+        HttpTestServer server = new HttpTestServer(JIRA, 8081);
         server.start();
 
         JiraRestClientFactory factory = new AsynchronousJiraRestClientFactory();

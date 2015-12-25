@@ -61,7 +61,7 @@ class JiraStub implements ServiceStub {
 
             project = new Project(new URI(""),"StubProject2","Stub Project2","Stub Project2 Description",
                     basicUser,new URI(""),versions,basicComponents,null,null);
-            projects.put("StubProject1",project);
+            projects.put("StubProject2",project);
         } catch (URISyntaxException e) {
             throw new IllegalStateException(e);
         }
