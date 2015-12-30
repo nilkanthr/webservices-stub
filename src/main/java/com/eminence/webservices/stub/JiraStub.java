@@ -20,10 +20,12 @@ class JiraStub implements ServiceStub {
     private final ObjectMapper objectMapper;
 
     JiraStub() {
+        System.out.println("In JiraStub **** ");
         projects = new HashMap<>();
         objectMapper = new ObjectMapper();
         objectMapper.setSerializationInclusion(NON_NULL);
         createDummyProjects();
+        System.out.println("created dummy projects **** ");
     }
 
     public String getResponseFor(HttpServletRequest httpServletRequest) {
