@@ -26,6 +26,7 @@ public class JiraAcceptanceTest {
 
     @BeforeClass
     public static void getJiraRestClient() throws Exception {
+        System.out.println("In Before Class method **** ");
         HttpTestServer server = new HttpTestServer(JIRA, 8081);
         server.start();
 
