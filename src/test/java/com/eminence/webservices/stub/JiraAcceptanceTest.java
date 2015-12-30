@@ -26,13 +26,20 @@ public class JiraAcceptanceTest {
 
     @BeforeClass
     public static void getJiraRestClient() throws Exception {
-        System.out.println("In Before Class method **** ");
-        HttpTestServer server = new HttpTestServer(JIRA, 8081);
-        server.start();
+        try {
+            System.out.println("In Before Class method **** ");
+            HttpTestServer server = new HttpTestServer(JIRA, 8081);
+            server.start();
+            System.out.println("startedServer **** ");
 
-        JiraRestClientFactory factory = new AsynchronousJiraRestClientFactory();
-        URI uri = new URI(JIRA_URL);
-        jiraRestClient = factory.createWithBasicHttpAuthentication(uri, JIRA_ADMIN_USERNAME, JIRA_ADMIN_PASSWORD);
+            JiraRestClientFactory factory = new AsynchronousJiraRestClientFactory();
+            URI uri = new URI(JIRA_URL);
+            jiraRestClient = factory.createWithBasicHttpAuthentication(uri, JIRA_ADMIN_USERNAME, JIRA_ADMIN_PASSWORD);
+            System.out.println("Done with Before class ***");
+        } catch (Throwable e) {
+            System.out.println("got some error");
+        }
+
     }
 
     @Test
