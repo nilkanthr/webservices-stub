@@ -20,12 +20,10 @@ class JiraStub implements ServiceStub {
     private final ObjectMapper objectMapper;
 
     JiraStub() {
-        System.out.println("In JiraStub **** ");
         projects = new HashMap<>();
         objectMapper = new ObjectMapper();
         objectMapper.setSerializationInclusion(NON_NULL);
         createDummyProjects();
-        System.out.println("created dummy projects **** ");
     }
 
     public String getResponseFor(HttpServletRequest httpServletRequest) {
@@ -64,8 +62,6 @@ class JiraStub implements ServiceStub {
             project = new Project(new URI(""),"StubProject2","Stub Project2","Stub Project2 Description",
                     basicUser,new URI(""),versions,basicComponents,null,null);
             projects.put("StubProject2",project);
-
-            System.out.println(" Created Dummy Projetcs " + projects.keySet());
         } catch (URISyntaxException e) {
             throw new IllegalStateException(e);
         }

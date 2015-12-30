@@ -17,10 +17,8 @@ public class HttpTestServer {
     private ServiceStub serviceStub;
 
     public HttpTestServer(ServiceType serviceType, int httpPort) {
-        System.out.println("In HttpTestServer **** ");
         this.httpPort = httpPort;
         serviceStub = getServiceStubFor(serviceType);
-        System.out.println("Got Stub " + serviceStub);
     }
 
     public void start() throws Exception {
