@@ -5,13 +5,11 @@ jdk:
 
 script:
    - mvn clean
-   - mvn test
-
-after_success:
-   - mvn clean
    - mvn install
+
 notifications:
     email:
         - nilkanth.rachote@gmail.com
+        - kuldeepsinghk@gmail.com
     on_success: always
     on_failure: always
